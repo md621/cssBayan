@@ -3,13 +3,18 @@ header {
     margin-right: auto;
     margin-left: auto;
     justify-content: flex-start;
-    border-bottom: 1px solid rgb(131, 128, 128);
+    border-bottom: 1px solid rgb(211, 205, 205);
     margin-bottom: 5px;
     width: 50%;
 }
 
 body {
     background-color: rgb(250, 250, 241);
+    transition: 
+    width 1s ease-in-out 1s,
+    height 1s ease-in-out 1s,
+    text-indent 1s ease-in-out 1s,
+    padding-top 1s ease-in-out 1s;
 }
 
 .accordion {
@@ -19,22 +24,18 @@ body {
 }
 
 .accordion section {
-    border-bottom: 1px solid rgb(131, 128, 128);
+    border-bottom: 1px solid rgb(211, 205, 205);
 }
 
-.accordion section h1 a {
+.accordion section h2 a {
     color: blue;
 }
 
-.accordion section:after + a {
+.accordion:hover section h2 a {
     color: black;
 }
 
-.accordion section h1 a:hover {
-    color: black;
-}
-
-.accordion:hover h1 a:before {
+.accordion:hover h2 a:before {
     content: '';
     position: absolute;
     right: 10px;
@@ -45,13 +46,25 @@ body {
     border-right: 5px solid transparent;
 }
 
-.accordion h1, .accordion p {
+.accordion section:hover a:before {
+    content: '';
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    margin-top: -3px;
+    border-top: 5px solid #333;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    rotate: 90deg;
+}
+
+.accordion h2, .accordion p {
     margin: 0;
 }
 .accordion p {
     padding: 5px;
 }
-.accordion h1 a {
+.accordion h2 a {
     display: block;
     position: relative;
     padding: 8px;
@@ -59,13 +72,12 @@ body {
     text-decoration: none;
 }
 
-.accordion h1 + div {
+.accordion h2 + div {
     height: 0;
     overflow: hidden;
-    transition: height 0.5s ease-in-out;
 }
 
-.accordion:hover :target h1 a:after {
+.accordion:hover :target h2 a:after {
     content: '';
     position: absolute;
     right: 10px;
@@ -77,7 +89,7 @@ body {
     rotate: 90deg;
 }
 
-.accordion:hover :target h1 a:before {
+.accordion:hover :target h2 a:before {
     content: '';
     position: absolute;
     right: 10px;
@@ -89,11 +101,23 @@ body {
     rotate: 90deg;
 }
 
-.accordion :target h1 + div {
+.accordion :target h2 + div {
     height: auto;
+}
+
+.accordion :hover h2 + div {
+    height: auto;
+}
+
+.accordion :target a {
     color: black;
 }
 
-.accordion :hover h1 + div {
-    height: auto;
+.accordion section div {
+    display: flex;
+}
+
+.img_mem {
+    margin: 5% auto;
+    transition: height all 4s linear;
 }
