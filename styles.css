@@ -22,6 +22,29 @@ body {
     border-bottom: 1px solid rgb(131, 128, 128);
 }
 
+.accordion section h1 a {
+    color: blue;
+}
+
+.accordion section:after + a {
+    color: black;
+}
+
+.accordion section h1 a:hover {
+    color: black;
+}
+
+.accordion:hover h1 a:before {
+    content: '';
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    margin-top: -3px;
+    border-top: 5px solid #333;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+}
+
 .accordion h1, .accordion p {
     margin: 0;
 }
@@ -35,16 +58,14 @@ body {
     color: #333;
     text-decoration: none;
 }
-.accordion h1 a:hover {
-    background: #EEEEFF;
-}
+
 .accordion h1 + div {
     height: 0;
     overflow: hidden;
     transition: height 0.5s ease-in-out;
 }
 
-.accordion :target h1 a:after {
+.accordion:hover :target h1 a:after {
     content: '';
     position: absolute;
     right: 10px;
@@ -53,9 +74,24 @@ body {
     border-top: 5px solid #333;
     border-left: 5px solid transparent;
     border-right: 5px solid transparent;
+    rotate: 90deg;
 }
+
+.accordion:hover :target h1 a:before {
+    content: '';
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    margin-top: -3px;
+    border-top: 5px solid #333;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    rotate: 90deg;
+}
+
 .accordion :target h1 + div {
     height: auto;
+    color: black;
 }
 
 .accordion :hover h1 + div {
