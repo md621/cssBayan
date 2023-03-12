@@ -1,0 +1,63 @@
+header {
+    display: flex;
+    margin-right: auto;
+    margin-left: auto;
+    justify-content: flex-start;
+    border-bottom: 1px solid rgb(131, 128, 128);
+    margin-bottom: 5px;
+    width: 50%;
+}
+
+body {
+    background-color: rgb(250, 250, 241);
+}
+
+.accordion {
+    width: 50%;
+    padding: 10px;
+    margin: 0 auto;
+}
+
+.accordion section {
+    border-bottom: 1px solid rgb(131, 128, 128);
+}
+
+.accordion h1, .accordion p {
+    margin: 0;
+}
+.accordion p {
+    padding: 5px;
+}
+.accordion h1 a {
+    display: block;
+    position: relative;
+    padding: 8px;
+    color: #333;
+    text-decoration: none;
+}
+.accordion h1 a:hover {
+    background: #EEEEFF;
+}
+.accordion h1 + div {
+    height: 0;
+    overflow: hidden;
+    transition: height 0.5s ease-in-out;
+}
+
+.accordion :target h1 a:after {
+    content: '';
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    margin-top: -3px;
+    border-top: 5px solid #333;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+}
+.accordion :target h1 + div {
+    height: auto;
+}
+
+.accordion :hover h1 + div {
+    height: auto;
+}
