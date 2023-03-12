@@ -1,3 +1,25 @@
+@media screen and (max-width: 1920px){
+    html {
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 820px){
+    html {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 320px){
+    html {
+        font-size: 12px;
+    }
+}
+
+* {
+    font-family: monospace;
+}
+
 header {
     display: flex;
     margin-right: auto;
@@ -25,6 +47,7 @@ body {
 
 .accordion section {
     border-bottom: 1px solid rgb(211, 205, 205);
+    transition: width 1s ease-in;
 }
 
 .accordion section h2 a {
@@ -72,9 +95,10 @@ body {
     text-decoration: none;
 }
 
-.accordion h2 + div {
+.accordion  div {
     height: 0;
     overflow: hidden;
+    transition: height 1s ease-in;
 }
 
 .accordion:hover :target h2 a:after {
@@ -103,10 +127,12 @@ body {
 
 .accordion :target h2 + div {
     height: auto;
+    transition: height 1s ease-in;
 }
 
 .accordion :hover h2 + div {
     height: auto;
+    transition: height 1s ease-in;
 }
 
 .accordion :target a {
@@ -118,6 +144,19 @@ body {
 }
 
 .img_mem {
+    height: 0;
+    width: 0;
     margin: 5% auto;
-    transition: height all 4s linear;
+}
+
+.accordion :target .img_mem {
+    height: 70%;
+    width: 70%;
+    transition: width .7s ease-in;
+}
+
+.accordion:hover .img_mem {
+    height: 70%;
+    width: 70%;
+    transition: width .7s ease-in;
 }
